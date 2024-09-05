@@ -10,7 +10,7 @@
 
   <div class="col-sm-7 offset-1">
     <h4 class="text-center alert alert-info">Informações</h4>
-    {% if stu %}
+    {% if roup %}
     <table class="table table-hover">
       <thead>
         <tr>
@@ -24,14 +24,14 @@
         </tr>
       </thead>
       <tbody>
-        {% for st in stu %}
+        {% for st in roup %}
         <tr>
           <th scope="row">{{st.id}}</th>
-          <td>{{st.name}}</td>
-          <td>{{st.name}}</td>
-          <td>{{st.name}}</td>
-          <td>{{st.email}}</td>
-          <td>{{st.password}}</td>
+          <td>{{st.marca}}</td>
+          <td>{{st.produto}}</td>
+          <td>{{st.genero}}</td>
+          <td>{{st.quantidade}}</td>
+          <td>{{st.preco}}</td>
           <td>
           <a href="{% url 'updatedata' st.id %}" class="btn btn-warning btn-sm">Edit</a>
           <form action="{% url 'deletedata' st.id %}" onclick= "return confirm('Are you sure you want to delete the student?')" method="post" class="d-inline"> {% csrf_token%}

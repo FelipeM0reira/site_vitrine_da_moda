@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, HttpResponseRedirect
 from .forms import EstoqueRegistration
 from .models import Estoque
 
@@ -26,5 +26,27 @@ def crud(request):
             fm = EstoqueRegistration()
     else:
         fm = EstoqueRegistration()
-    # roupa = Estoque.objects.all()
-    return render(request, 'home/crud.html', {'form':fm})
+    roupa = Estoque.objects.all()
+    return render(request, 'home/crud.html', {'form':fm, 'roup':roupa})
+
+# This Function will Update/Edit
+
+def update_data(request, id):
+    if request.method == 'POST':
+        pi = Estoque.objects.get(pk=id)
+        fm = EstoqueRegistration(request.POST, instance=pi)
+        if fm.is_valid():
+            fm.save()
+            return redirect('crud')
+    else:
+        pi = Estoque.objects.get(pk=id)
+        fm = EstoqueRegistration(instance=pi)
+    return render(request, 'home/update.html', {'form': fm})
+
+    # This Function will Delete
+
+def delete_data(request, id):
+    if request.method == 'POST':
+        pi = Estoque.objects.get(pk=id)
+        pi.delete()
+    return HttpResponseRedirect('/')
