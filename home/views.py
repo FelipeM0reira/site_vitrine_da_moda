@@ -43,7 +43,7 @@ def update_data(request, id):
         fm = EstoqueRegistration(instance=pi)
     return render(request, 'home/update.html', {'form': fm})
 
-    # This Function will Delete
+    # This Function will Delet
 
 def delete_data(request, id):
     if request.method == 'POST':
