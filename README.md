@@ -1,6 +1,6 @@
 # Site para controle de estoque da loja Vitrine da moda
 
-# <h1 align="center">🔨 Controle do estoque (Adição, edição e exclusão de peças de roupas) </h1>
+# <h1 align="center">🔨 Controle do estoque (Adição, edição, atualização e exclusão de peças de roupas) </h1>
 
 ![image](https://github.com/user-attachments/assets/79935f78-7b24-4477-9dbc-b6122b2c2b6e)
 
